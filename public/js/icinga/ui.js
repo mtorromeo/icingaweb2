@@ -128,6 +128,30 @@
             });
         },
 
+        reloadJs: function () {
+            var icinga = this.icinga;
+            icinga.logger.info('Reloading Js');
+            $('link').each(function() {
+                var $oldLink = $(this);
+                if ($oldLink.hasAttr('type') && $oldLink.attr('type').indexOf('js') > -1) {
+                    var base = location.protocol + '//' + location.host;
+                    var url = icinga.utils.addUrlParams(
+                        $(this).attr('href'),
+                        { id: new Date().getTime() }
+                    );
+
+                    var $newLink = $oldLink.clone().attr(
+                        'href',
+                        base + '/' + url.replace(/^\//, '')
+                    ).on('load', function() {
+                        icinga.ui.fixControls();
+                        $oldLink.remove();
+                    });
+                    $newLink.appendTo($('head'));
+                }
+            });
+        },
+
         enableTimeCounters: function () {
             this.timeCounterTimer = this.icinga.timer.register(
                 this.refreshTimeSince,

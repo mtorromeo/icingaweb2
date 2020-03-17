@@ -615,6 +615,11 @@
                 this.icinga.ui.reloadCss();
             }
 
+            var jsreload = req.getResponseHeader('X-Icinga-Reload-Js');
+            if (jsreload) {
+                this.icinga.ui.reloadJs();
+            }
+
             if (req.getResponseHeader('X-Icinga-Redirect')) {
                 return;
             }

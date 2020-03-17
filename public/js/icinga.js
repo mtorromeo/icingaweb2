@@ -226,6 +226,7 @@
                     window.icinga = new window.Icinga(oldConfig);
                     window.icinga.initialize();
                     window.icinga.ui.reloadCss();
+                    console.log(window.icinga.ui.reloadJs());
                     oldjQuery = undefined;
                     oldConfig = undefined;
                     oldIcinga = undefined;
@@ -235,6 +236,7 @@
                     window.Icinga = oldIcinga;
                     window.icinga = new Icinga(oldConfig);
                     window.icinga.ui.reloadCss();
+                    console.log(window.icinga.ui.reloadJs());
                 });
             }, 0);
         }
