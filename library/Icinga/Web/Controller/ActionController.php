@@ -499,6 +499,10 @@ class ActionController extends Zend_Controller_Action
             $resp->setReloadCss(true);
         }
 
+        if ($this->reloadJs) {
+            $resp->setReloadJs(true);
+        }
+
         if ($this->view->title) {
             if (preg_match('~[\r\n]~', $this->view->title)) {
                 // TODO: Innocent exception and error log for hack attempts

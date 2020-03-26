@@ -129,7 +129,7 @@
         },
 
         reloadJs: function () {
-            // location.reload(true);
+            setTimeout('location.reload(true)', 1);
             icinga.logger.info('Reloading JS');
         },
 
