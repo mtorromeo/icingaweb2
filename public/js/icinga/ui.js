@@ -129,8 +129,9 @@
         },
 
         reloadJs: function () {
-            setTimeout('location.reload(true)', 1);
+            var icinga = this.icinga;
             icinga.logger.info('Reloading JS');
+            location.reload(true);
         },
 
         enableTimeCounters: function () {
