@@ -129,7 +129,6 @@
         },
 
         reloadJs: function () {
-            var icinga = this.icinga;
             icinga.logger.info('Reloading JS');
             location.reload(true);
         },

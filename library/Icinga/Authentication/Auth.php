@@ -135,7 +135,7 @@ class Auth
         } else {
             $preferences = new Preferences();
         }
-        // TODO(el): Quick-fix for #10957. Only reload CSS if the theme changed. check
+        // TODO(el): Quick-fix for #10957. Only reload CSS if the theme changed.
         $this->getResponse()->setReloadCss(true);
         $user->setPreferences($preferences);
         $groups = $user->getGroups();

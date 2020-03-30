@@ -219,13 +219,14 @@ class Response extends Zend_Controller_Response_Http
     /**
      * Set whether to instruct client side script code to reload JS
      *
-     * @param   bool    $reloadJs
+     * @param bool $reloadJs
      *
-     * @return  $this
+     * @return $this
      */
     public function setReloadJs($reloadJs)
     {
         $this->reloadJs = $reloadJs;
+
         return $this;
     }
 
@@ -242,13 +243,14 @@ class Response extends Zend_Controller_Response_Http
     /**
      * Set whether to instruct client side script code to reload CSS
      *
-     * @param   bool    $reloadCss
+     * @param bool $reloadCss
      *
-     * @return  $this
+     * @return $this
      */
     public function setReloadCss($reloadCss)
     {
         $this->reloadCss = $reloadCss;
+
         return $this;
     }
 

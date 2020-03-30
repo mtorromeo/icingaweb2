@@ -66,8 +66,18 @@ class ActionController extends Zend_Controller_Action
 
     protected $autorefreshInterval;
 
+    /**
+     * Set whether to instruct client side script code to reload CSS
+     *
+     * @var bool
+     */
     protected $reloadCss = false;
 
+    /**
+     * Set whether to instruct client side script code to reload JS
+     *
+     * @var bool
+     */
     protected $reloadJs = false;
 
     protected $window;
@@ -236,15 +246,27 @@ class ActionController extends Zend_Controller_Action
         return $this->window;
     }
 
+    /**
+     * Set whether to instruct client side script code to reload CSS
+     *
+     * @return $this
+     */
     protected function reloadCss()
     {
         $this->reloadCss = true;
+
         return $this;
     }
 
+    /**
+     * Set whether to instruct client side script code to reload JS
+     *
+     * @return $this
+     */
     protected function reloadJs()
     {
         $this->reloadJs = true;
+
         return $this;
     }
 

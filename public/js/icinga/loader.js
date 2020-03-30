@@ -615,8 +615,7 @@
                 this.icinga.ui.reloadCss();
             }
 
-            var jsreload = req.getResponseHeader('X-Icinga-Reload-Js');
-            if (jsreload) {
+            if (req.getResponseHeader('X-Icinga-Reload-Js')) {
                 this.icinga.ui.reloadJs();
             }
 
