@@ -46,8 +46,6 @@ class DashletForm extends CompatForm
             'required' => true
         ]);
 
-        $this->add(Html::tag('hr'));
-
         $this->addElement('select', 'dashboard', [
             'label' => 'Dashboard',
             'required'  => true,
