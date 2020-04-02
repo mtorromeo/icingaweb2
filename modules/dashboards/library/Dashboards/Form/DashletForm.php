@@ -14,18 +14,19 @@ class DashletForm extends CompatForm
 
     public function fetchDashboards()
     {
-        $dashboard = [];
+        $dashboards = [];
 
-        $this->data = (new Select())
+        $select = (new Select())
             ->columns('*')
             ->from('dashboard');
 
-        $dashboards = $this->getDb()->select($this->data);
-        foreach ($dashboards as $name) {
-            $dashboard[] = [$name['id'] => $name['name']];
+        $rs = $this->getDb()->select($select);
+
+        foreach ($rs as $dashboard) {
+            $dashboards[$dashboard->id] = $dashboard->name;
         }
 
-        return $dashboard;
+        return $dashboards;
     }
 
     public function newAction()
