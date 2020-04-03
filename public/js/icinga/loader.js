@@ -615,10 +615,6 @@
                 this.icinga.ui.reloadCss();
             }
 
-            if (req.getResponseHeader('X-Icinga-Reload-Js')) {
-                this.icinga.ui.reloadJs();
-            }
-
             if (req.getResponseHeader('X-Icinga-Redirect')) {
                 return;
             }
@@ -813,6 +809,11 @@
                 req = dataOrReq;
             } else {
                 req = reqOrError;
+            }
+
+            if (req.getResponseHeader('X-Icinga-Reload-Js')) {
+                this.icinga.ui.reloadJs();
+                return;
             }
 
             // Remove 'impact' class if there was such
